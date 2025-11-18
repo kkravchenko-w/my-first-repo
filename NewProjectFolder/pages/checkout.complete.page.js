@@ -8,6 +8,6 @@ export class CheckoutCompletePage {
     }
 
     async getComplitionMessage() {
-        return await this.completeHeader.textContent();
+        return this.completeHeader.textContent();
     }
 }
