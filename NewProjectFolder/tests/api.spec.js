@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('API tests Restful-booker', () => {
+test.describe('API tests Restful-booker @api', () => {
 
     const bookingData = {
         firstname : 'Jim',
