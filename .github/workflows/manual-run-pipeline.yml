@@ -21,6 +21,9 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
+    - name: Run UI tests
+      run: npm --prefix ./NewProjectFolder run tests:ui -- --reporter=html --output=playwright-report-ui
+
     - name: Run API tests
       run: npm --prefix ./NewProjectFolder run tests:api -- --reporter=html --output=playwright-report-api
 
@@ -29,11 +32,13 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: playwright-report-ui
-        path: playwright-report-ui/ retention-days:7
+        path: NewProjectFolder/playwright-report-ui/ 
+        retention-days: 7
 
     - name: Upload API test report
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: playwright-report-api
-        path: playwright-report-api/ retntion-days:7
+        path: NewProjectFolder/playwright-report-api/
+        retntion-days: 7
