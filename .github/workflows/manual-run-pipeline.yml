@@ -16,7 +16,7 @@ jobs:
         node-version: '22.20.0'
 
     - name: Install dependencies
-      run: npm install
+      run: npm install --prefix ./NewProjectFolder
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
