@@ -24,9 +24,6 @@ jobs:
     - name: Run UI tests
       run: npm --prefix ./NewProjectFolder run tests:ui -- --reporter=html --output=playwright-report-ui
 
-    - name: Run API tests
-      run: npm --prefix ./NewProjectFolder run tests:api -- --reporter=html --output=playwright-report-api
-
     - name: Upload UI test report
       if: always()
       uses: actions/upload-artifact@v4
@@ -34,6 +31,9 @@ jobs:
         name: playwright-report-ui
         path: NewProjectFolder/playwright-report/ 
         retention-days: 7
+
+    - name: Run API tests
+      run: npm --prefix ./NewProjectFolder run tests:api -- --reporter=html --output=playwright-report-api
 
     - name: Upload API test report
       if: always()

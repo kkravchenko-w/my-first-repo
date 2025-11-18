@@ -14,6 +14,8 @@ test('Buy the most expensive item @ui', async ({ page }) => {
     const checkoutStepTwoPage = new CheckoutStepTwoPage(page);
     const checkoutCompletePage = new CheckoutCompletePage(page);
 
+    console.log('UI E2E test');
+
     await loginPage.open();
     await loginPage.login('standard_user', 'secret_sauce');
 
